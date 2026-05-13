@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/focusflow",
+      "destination": "https://focusflow-bewind.vercel.app/",
+      "permanent": false
+    }
+  ]
+}

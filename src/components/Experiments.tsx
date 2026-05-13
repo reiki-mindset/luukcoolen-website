@@ -78,10 +78,13 @@ export function Experiments() {
                   ))}
                 </ul>
 
-                <div className="inline-flex items-center gap-2 text-brand font-bold group/link">
+                <a
+                  href="/focusflow"
+                  className="inline-flex items-center gap-2 text-brand font-bold group/link"
+                >
                   Dit is waar mijn focus nu ligt
                   <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
-                </div>
+                </a>
               </div>
 
               <div className="lg:col-span-5">
