@@ -4,6 +4,16 @@
       "source": "/focusflow",
       "destination": "https://focusflow-bewind.vercel.app/",
       "permanent": false
+    },
+    {
+      "source": "/woonbuddy",
+      "destination": "https://woonbuddy-759367249229.europe-west2.run.app",
+      "permanent": false
+    },
+    {
+      "source": "/mindflow",
+      "destination": "https://mindflow-nlp-coach-818331239205.europe-west2.run.app",
+      "permanent": false
     }
   ]
 }

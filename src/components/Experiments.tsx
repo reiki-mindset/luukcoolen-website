@@ -69,6 +69,7 @@ const prototypes: Prototype[] = [
       { src: '/projects/woonbuddy-taken.jpg', alt: 'Woonbuddy takenoverzicht' },
       { src: '/projects/woonbuddy-ontwikkeling.jpg', alt: 'Woonbuddy ontwikkeling' },
     ],
+    href: '/woonbuddy',
     cta: 'Bekijk Woonbuddy live hier',
   },
   {
@@ -92,6 +93,7 @@ const prototypes: Prototype[] = [
       { src: '/projects/mindflow-active-session.jpg', alt: 'MindFlow actieve sessie' },
       { src: '/projects/mindflow-kaders.jpg', alt: 'MindFlow kaders voor coaching' },
     ],
+    href: '/mindflow',
     cta: 'Bekijk MindFlow live hier',
   },
 ];
@@ -137,6 +139,7 @@ function PrototypeCase({
   onOpen: (image: Prototype['image']) => void;
 }) {
   const isEven = index % 2 === 0;
+  const isExternalLink = prototype.href?.startsWith('http');
 
   return (
     <motion.article
@@ -175,7 +178,12 @@ function PrototypeCase({
             </ul>
 
             {prototype.href ? (
-              <a href={prototype.href} className="inline-flex items-center gap-2 font-bold text-brand group/link">
+              <a
+                href={prototype.href}
+                target={isExternalLink ? '_blank' : undefined}
+                rel={isExternalLink ? 'noopener noreferrer' : undefined}
+                className="inline-flex items-center gap-2 font-bold text-brand group/link"
+              >
                 {prototype.cta}
                 <ArrowRight size={18} className="transition-transform group-hover/link:translate-x-1" />
               </a>
