@@ -1,10 +1,26 @@
-import { ArrowRight, Blocks, BrainCircuit } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <header className="relative pt-20 pb-20 md:pt-32 md:pb-40 px-6 md:px-12 max-w-5xl mx-auto overflow-visible">
+    <header className="relative pt-16 pb-20 md:pt-28 md:pb-36 px-6 md:px-12 max-w-5xl mx-auto overflow-visible">
+      <div className="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-12 lg:gap-16 items-center">
       <div className="relative z-10 max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-10 lg:hidden"
+        >
+          <div className="relative aspect-[4/5] max-w-[260px] overflow-hidden rounded-3xl border border-white/70 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
+            <img
+              src="/luuk-coolen-portfolio.jpg"
+              alt="Luuk Coolen"
+              className="h-full w-full object-cover object-[47%_28%]"
+            />
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,30 +71,21 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full h-full pointer-events-none overflow-visible hidden lg:block opacity-20">
+      <div className="hidden lg:block relative z-0 self-start mt-16">
         <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 right-0 w-72 h-96 bg-white rounded-3xl border border-slate-200 shadow-sm p-8 flex flex-col gap-6 rotate-6"
+          initial={{ opacity: 0, y: 20, rotate: 2 }}
+          animate={{ opacity: 1, y: 0, rotate: 2 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/70 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.14)]"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-teal-50 text-brand rounded-2xl flex items-center justify-center">
-              <Blocks size={24} />
-            </div>
-            <div className="space-y-2 flex-1">
-              <div className="w-1/2 h-2 bg-slate-100 rounded" />
-              <div className="w-3/4 h-2 bg-slate-100 rounded" />
-            </div>
-          </div>
-          <div className="flex-1 bg-slate-50 rounded-2xl border border-slate-100 p-4 space-y-3">
-            <div className="h-16 bg-white rounded-xl border border-slate-100" />
-            <div className="h-16 bg-white rounded-xl border border-slate-100" />
-            <div className="h-16 bg-teal-500/10 rounded-xl border border-teal-100 flex items-center justify-center text-brand">
-              <BrainCircuit size={24} />
-            </div>
-          </div>
-          <div className="h-10 bg-teal-500/10 rounded-xl" />
+          <img
+            src="/luuk-coolen-portfolio.jpg"
+            alt="Luuk Coolen"
+            className="h-full w-full object-cover object-[48%_26%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/10 via-transparent to-white/5" />
         </motion.div>
+      </div>
       </div>
     </header>
   );
