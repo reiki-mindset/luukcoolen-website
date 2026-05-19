@@ -1,28 +1,33 @@
 import { Section } from './ui/Section';
 import { motion } from 'motion/react';
-import { Search, Hammer, Users } from 'lucide-react';
+import { Bot, Hammer, MousePointerClick, Search } from 'lucide-react';
 
 export function Approach() {
   const steps = [
     {
       icon: <Search size={24} />,
-      title: "Knelpunt isoleren",
-      description: "We zoeken de plek waar de meeste tijd verloren gaat of de meeste frustratie zit. Geen heel systeem tegelijk, maar één specifiek proces."
+      title: 'Praktijksignaal herkennen',
+      description: 'Ik begin bij situaties die ik herken uit zorg, bewindvoering of persoonlijke structuur: waar ontstaat ruis, tijdverlies of mentale druk?',
+    },
+    {
+      icon: <Bot size={24} />,
+      title: 'Samen denken met AI',
+      description: 'Met tools als ChatGPT, Gemini, Cursor en Google AI Studio verken ik snel richtingen, teksten, flows en technische opties.',
     },
     {
       icon: <Hammer size={24} />,
-      title: "Prototype bouwen",
-      description: "Binnen enkele weken bouw ik een simpele tool, script of workflow. Snel, tastbaar en direct gericht op het probleem."
+      title: 'Klein prototype bouwen',
+      description: 'Daarna maak ik iets tastbaars: een scherm, workflow, mini-app of experiment dat je kunt aanklikken en beoordelen.',
     },
     {
-      icon: <Users size={24} />,
-      title: "Testen in de praktijk",
-      description: "We testen het met de mensen die het werk elke dag doen. Alleen de praktijk bepaalt of een oplossing echt werkt."
-    }
+      icon: <MousePointerClick size={24} />,
+      title: 'Testen en aanscherpen',
+      description: 'Ik kijk wat duidelijker wordt, wat schuurt en wat ik leer. Het doel is niet meteen perfectie, maar sneller begrijpen wat werkt.',
+    },
   ];
 
   return (
-    <Section bg="white" id="aanpak">
+    <Section bg="white" id="werkwijze">
       <div className="max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,21 +35,18 @@ export function Approach() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Aanpak</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Hoe ik werk</h2>
           <p className="text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl">
-            Ik schrijf geen adviesrapporten — ik bouw prototypes.
-            <br />
-            We testen direct wat werkt, in plaats van te blijven plannen.
+            Ik gebruik AI niet als trucje, maar als bouwpartner om sneller van vaag probleem naar zichtbaar prototype te komen.
           </p>
         </motion.div>
 
         <div className="space-y-12 relative">
-          {/* Vertical line */}
           <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-slate-100 hidden md:block" />
-          
+
           {steps.map((step, index) => (
-            <motion.div 
-              key={index}
+            <motion.div
+              key={step.title}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
