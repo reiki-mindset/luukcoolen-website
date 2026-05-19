@@ -1,39 +1,169 @@
+import type { ReactNode } from 'react';
 import { Section } from './ui/Section';
-import { Activity, ArrowRight, Brain, CheckCircle2, Dumbbell, Home, LayoutTemplate, SearchCode, Sparkles } from 'lucide-react';
+import { ArrowRight, Brain, CheckCircle2, Home, LayoutTemplate } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export function Experiments() {
-  const projects = [
-    {
-      icon: <Home size={20} />,
-      title: 'Woonbuddy',
-      label: 'zelfstandig wonen / structuur',
-      status: 'Concept',
-      description: 'Een idee voor een steunende structuurtool rond wonen, routines en praktische stappen voor mensen die overzicht nodig hebben.',
-    },
-    {
-      icon: <Brain size={20} />,
-      title: 'MindFlow',
-      label: 'reflectie / mentale rust',
-      status: 'Verkenning',
-      description: 'Een experiment rond gedachten ordenen, patronen herkennen en mentale druk vertalen naar behapbare vervolgstappen.',
-    },
-    {
-      icon: <Dumbbell size={20} />,
-      title: 'FitFlow',
-      label: 'gewoontes / energie',
-      status: 'Idee',
-      description: 'Een kleine toolrichting voor ritme, energie en persoonlijke voortgang zonder dat het een zware tracking-app wordt.',
-    },
-    {
-      icon: <SearchCode size={20} />,
-      title: 'Vibe Audit AI',
-      label: 'analyse / patronen',
-      status: 'Prototype',
-      description: 'Een onderzoek naar hoe AI losse signalen kan samenvatten tot bruikbare inzichten en betere vragen.',
-    },
-  ];
+type Prototype = {
+  title: string;
+  label: string;
+  status: string;
+  icon: ReactNode;
+  description: string;
+  bullets: string[];
+  images: {
+    src: string;
+    alt: string;
+  }[];
+  href?: string;
+  cta?: string;
+};
 
+const prototypes: Prototype[] = [
+  {
+    title: 'FocusFlow',
+    label: 'bewindvoering / prioriteren / overzicht',
+    status: 'Live prototype',
+    icon: <LayoutTemplate size={24} />,
+    description:
+      'FocusFlow onderzoekt hoe taken, dossierinformatie en prioriteiten kunnen samenkomen in een helder actiebeeld. Het prototype helpt om complexe cliëntvragen voor te bereiden en de volgende stap scherper te maken.',
+    bullets: [
+      'Grip op versnipperde dossierinformatie',
+      'Focus op urgentie, context en vervolgstap',
+      'Weekplanning en reflectie als onderdeel van de workflow',
+    ],
+    images: [
+      { src: '/projects/focusflow-stap-2.jpg', alt: 'FocusFlow intake en inbox scan' },
+      { src: '/projects/focusflow-stap-4.jpg', alt: 'FocusFlow actieplan en top drie' },
+      { src: '/projects/focusflow-weekplanning.jpg', alt: 'FocusFlow weekplanning' },
+    ],
+    href: '/focusflow',
+    cta: 'Bekijk FocusFlow',
+  },
+  {
+    title: 'Woonbuddy',
+    label: 'zelfstandig wonen / begeleiding / structuur',
+    status: 'Prototype',
+    icon: <Home size={24} />,
+    description:
+      'Woonbuddy is een prototype voor mensen die ondersteuning nodig hebben bij wonen, taken, huisregels en persoonlijke ontwikkeling. De app vertaalt begeleiding naar overzichtelijke stappen en vaste ankerpunten.',
+    bullets: [
+      'Dagelijkse taken en activiteiten zichtbaar maken',
+      'Huisregels, links en begeleiding op één plek',
+      'Ontwikkeling bijhouden zonder zware administratie',
+    ],
+    images: [
+      { src: '/projects/woonbuddy-startpagina.jpg', alt: 'Woonbuddy startpagina' },
+      { src: '/projects/woonbuddy-taken.jpg', alt: 'Woonbuddy takenoverzicht' },
+      { src: '/projects/woonbuddy-ontwikkeling.jpg', alt: 'Woonbuddy ontwikkeling' },
+    ],
+  },
+  {
+    title: 'MindFlow',
+    label: 'reflectie / coaching / mentale rust',
+    status: 'Verkenning',
+    icon: <Brain size={24} />,
+    description:
+      'MindFlow verkent hoe een AI-coach kan helpen om gedachten, patronen en hypotheses rustig te ordenen. Niet als vervanging van begeleiding, maar als veilige structuur om sneller tot inzicht te komen.',
+    bullets: [
+      'Starten vanuit een duidelijke coachvraag',
+      'Patronen en hypotheses zichtbaar maken',
+      'Een actieve sessie waarin reflectie concreet wordt',
+    ],
+    images: [
+      { src: '/projects/mindflow-dashboard.jpg', alt: 'MindFlow dashboard' },
+      { src: '/projects/mindflow-active-session.jpg', alt: 'MindFlow actieve sessie' },
+      { src: '/projects/mindflow-kaders.jpg', alt: 'MindFlow kaders voor coaching' },
+    ],
+  },
+];
+
+function ScreenshotStack({ images, title }: Pick<Prototype, 'images' | 'title'>) {
+  return (
+    <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      {images.map((image, index) => (
+        <motion.figure
+          key={image.src}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: index * 0.08 }}
+          className={`overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-[0_18px_60px_rgba(15,23,42,0.08)] ${
+            index === 0 ? 'lg:-rotate-1' : index === 1 ? 'lg:ml-10 lg:rotate-1' : 'lg:mr-10 lg:-rotate-1'
+          }`}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            className="aspect-[4/3] h-full w-full object-contain object-top"
+          />
+          <figcaption className="sr-only">
+            {title}: {image.alt}
+          </figcaption>
+        </motion.figure>
+      ))}
+    </div>
+  );
+}
+
+function PrototypeCase({ prototype, index }: { prototype: Prototype; index: number }) {
+  const isEven = index % 2 === 0;
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative"
+    >
+      <div className="absolute -inset-4 rounded-[2.5rem] bg-brand/5 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+      <div className="card-3d relative p-6 md:p-10">
+        <div className={`grid gap-10 lg:grid-cols-12 lg:items-center ${isEven ? '' : 'lg:[&>*:first-child]:order-2'}`}>
+          <div className="lg:col-span-6">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-lg shadow-teal-500/20">
+                {prototype.icon}
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">{prototype.title}</h3>
+                <p className="text-xs font-bold uppercase tracking-widest text-brand">{prototype.label}</p>
+              </div>
+            </div>
+
+            <div className="mb-6 inline-flex rounded-full bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand">
+              {prototype.status}
+            </div>
+
+            <p className="mb-8 text-lg leading-relaxed text-slate-700">{prototype.description}</p>
+
+            <ul className="mb-8 space-y-4">
+              {prototype.bullets.map((bullet) => (
+                <li key={bullet} className="flex items-start gap-3 text-slate-600">
+                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-brand" />
+                  <span className="font-medium">{bullet}</span>
+                </li>
+              ))}
+            </ul>
+
+            {prototype.href && prototype.cta ? (
+              <a href={prototype.href} className="inline-flex items-center gap-2 font-bold text-brand group/link">
+                {prototype.cta}
+                <ArrowRight size={18} className="transition-transform group-hover/link:translate-x-1" />
+              </a>
+            ) : null}
+          </div>
+
+          <div className="lg:col-span-6">
+            <ScreenshotStack images={prototype.images} title={prototype.title} />
+          </div>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+export function Experiments() {
   return (
     <Section bg="light" id="projecten">
       <div className="mb-20">
@@ -44,124 +174,24 @@ export function Experiments() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Projecten en prototypes</h2>
-          <div className="space-y-6 text-xl text-slate-600 leading-relaxed">
+          <h2 className="mb-8 text-3xl font-bold leading-tight md:text-5xl">Projecten en prototypes</h2>
+          <div className="space-y-6 text-xl leading-relaxed text-slate-600">
             <p>
               Geen perfecte producten, maar tastbare experimenten. Ik gebruik projecten om te leren, aannames te testen en praktijkproblemen concreet te maken.
             </p>
-            <p className="text-slate-900 font-medium">
+            <p className="font-medium text-slate-900">
               De rode draad: overzicht, structuur, besluitvorming en mentale rust in complexe situaties.
             </p>
           </div>
         </motion.div>
       </div>
 
-      <div className="mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative group"
-        >
-          <div className="absolute -inset-4 bg-brand/5 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-          <div className="relative card-3d p-8 md:p-12 border-brand/20 shadow-teal-500/5">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-brand text-white rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20">
-                    <LayoutTemplate size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900">FocusFlow</h3>
-                    <span className="text-xs font-bold text-brand uppercase tracking-widest">Featured prototype / bewindvoering</span>
-                  </div>
-                </div>
-
-                <p className="text-xl text-slate-700 mb-8 leading-relaxed">
-                  FocusFlow onderzoekt hoe taken, dossierinformatie en prioriteiten kunnen samenkomen in een helder actiebeeld. Het prototype helpt om complexe cliëntvragen voor te bereiden en de volgende stap scherper te maken.
-                  <br />
-                  <span className="font-semibold text-brand">Minder zoeken, meer richting.</span>
-                </p>
-
-                <ul className="grid sm:grid-cols-2 gap-4 mb-10">
-                  {[
-                    'Waarom gebouwd: grip op versnipperde dossierinformatie',
-                    'Status: live prototype',
-                    'Onderzocht: prioriteren en samenvatten',
-                    'Geleerd: kleine focus helpt meer dan een groot dashboard',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-slate-600">
-                      <CheckCircle2 size={18} className="text-brand shrink-0" />
-                      <span className="font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href="/focusflow"
-                  className="inline-flex items-center gap-2 text-brand font-bold group/link"
-                >
-                  Bekijk FocusFlow
-                  <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
-                </a>
-              </div>
-
-              <div className="lg:col-span-5">
-                <div className="bg-slate-50 rounded-2xl border border-slate-100 p-6 space-y-4 shadow-inner">
-                  <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-                    <div className="flex items-center gap-2">
-                      <Sparkles size={18} className="text-brand" />
-                      <div className="w-24 h-3 bg-slate-200 rounded" />
-                    </div>
-                    <div className="w-16 h-6 bg-brand/10 rounded-full" />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="w-full h-2 bg-slate-200 rounded" />
-                    <div className="w-3/4 h-2 bg-slate-200 rounded" />
-                  </div>
-                  <div className="pt-4 grid grid-cols-2 gap-3">
-                    <div className="h-20 bg-white rounded-xl border border-slate-100" />
-                    <div className="h-20 bg-teal-500/10 rounded-xl border border-teal-100 flex items-center justify-center text-brand">
-                      <Activity size={24} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className="space-y-16">
+        {prototypes.map((prototype, index) => (
+          <div key={prototype.title}>
+            <PrototypeCase prototype={prototype} index={index} />
           </div>
-        </motion.div>
-      </div>
-
-      <div>
-        <h3 className="text-sm font-bold tracking-widest uppercase text-slate-400 mb-8 flex items-center gap-4">
-          <span className="w-8 h-px bg-slate-200" />
-          Andere experimenten
-        </h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group"
-            >
-              <div className="w-10 h-10 bg-slate-50 text-slate-400 rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand/10 group-hover:text-brand transition-colors">
-                {project.icon}
-              </div>
-              <div className="flex items-center justify-between gap-3 mb-3">
-                <h4 className="font-bold text-slate-900">{project.title}</h4>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand bg-brand/10 px-2 py-1 rounded-full">
-                  {project.status}
-                </span>
-              </div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">{project.label}</p>
-              <p className="text-slate-500 text-sm leading-relaxed">{project.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        ))}
       </div>
     </Section>
   );
