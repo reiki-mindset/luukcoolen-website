@@ -15,6 +15,10 @@ type Prototype = {
     src: string;
     alt: string;
   };
+  examples: {
+    src: string;
+    alt: string;
+  }[];
   href?: string;
   cta: string;
 };
@@ -36,6 +40,11 @@ const prototypes: Prototype[] = [
       src: '/projects/focusflow-overview.jpg',
       alt: 'FocusFlow overzicht met werkdagen, prioriteiten en reflectie',
     },
+    examples: [
+      { src: '/projects/focusflow-stap-2.jpg', alt: 'FocusFlow intake en inbox scan' },
+      { src: '/projects/focusflow-stap-4.jpg', alt: 'FocusFlow actieplan en top drie' },
+      { src: '/projects/focusflow-weekplanning.jpg', alt: 'FocusFlow weekplanning' },
+    ],
     href: '/focusflow',
     cta: 'Bekijk FocusFlow live hier',
   },
@@ -55,6 +64,11 @@ const prototypes: Prototype[] = [
       src: '/projects/woonbuddy-overview.jpg',
       alt: 'Woonbuddy overzicht met startpagina, taken en ontwikkeling',
     },
+    examples: [
+      { src: '/projects/woonbuddy-startpagina.jpg', alt: 'Woonbuddy startpagina' },
+      { src: '/projects/woonbuddy-taken.jpg', alt: 'Woonbuddy takenoverzicht' },
+      { src: '/projects/woonbuddy-ontwikkeling.jpg', alt: 'Woonbuddy ontwikkeling' },
+    ],
     cta: 'Bekijk Woonbuddy live hier',
   },
   {
@@ -73,6 +87,11 @@ const prototypes: Prototype[] = [
       src: '/projects/mindflow-overview.jpg',
       alt: 'MindFlow overzicht met dashboard, coachsessie en principes',
     },
+    examples: [
+      { src: '/projects/mindflow-dashboard.jpg', alt: 'MindFlow dashboard' },
+      { src: '/projects/mindflow-active-session.jpg', alt: 'MindFlow actieve sessie' },
+      { src: '/projects/mindflow-kaders.jpg', alt: 'MindFlow kaders voor coaching' },
+    ],
     cta: 'Bekijk MindFlow live hier',
   },
 ];
@@ -170,6 +189,25 @@ function PrototypeCase({
 
           <div className="lg:col-span-7">
             <PrototypeImage image={prototype.image} title={prototype.title} onOpen={onOpen} />
+            <div className="mt-5">
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-slate-400">Meer voorbeelden</p>
+              <div className="grid grid-cols-3 gap-3">
+                {prototype.examples.map((example) => (
+                  <button
+                    key={example.src}
+                    type="button"
+                    onClick={() => onOpen(example)}
+                    className="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm"
+                    aria-label={`Vergroot voorbeeld van ${prototype.title}: ${example.alt}`}
+                  >
+                    <img src={example.src} alt={example.alt} loading="lazy" className="aspect-[4/3] w-full object-contain object-top" />
+                    <span className="absolute inset-0 flex items-center justify-center bg-slate-950/0 text-white transition-colors group-hover:bg-slate-950/25">
+                      <Maximize2 size={18} className="opacity-0 transition-opacity group-hover:opacity-100" />
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
