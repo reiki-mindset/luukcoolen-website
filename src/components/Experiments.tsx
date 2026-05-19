@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Section } from './ui/Section';
-import { ArrowRight, Brain, CheckCircle2, Home, LayoutTemplate } from 'lucide-react';
+import { ArrowRight, Brain, CheckCircle2, Home, LayoutTemplate, Maximize2, X } from 'lucide-react';
 import { motion } from 'motion/react';
 
 type Prototype = {
@@ -10,12 +11,12 @@ type Prototype = {
   icon: ReactNode;
   description: string;
   bullets: string[];
-  images: {
+  image: {
     src: string;
     alt: string;
-  }[];
+  };
   href?: string;
-  cta?: string;
+  cta: string;
 };
 
 const prototypes: Prototype[] = [
@@ -31,18 +32,17 @@ const prototypes: Prototype[] = [
       'Focus op urgentie, context en vervolgstap',
       'Weekplanning en reflectie als onderdeel van de workflow',
     ],
-    images: [
-      { src: '/projects/focusflow-stap-2.jpg', alt: 'FocusFlow intake en inbox scan' },
-      { src: '/projects/focusflow-stap-4.jpg', alt: 'FocusFlow actieplan en top drie' },
-      { src: '/projects/focusflow-weekplanning.jpg', alt: 'FocusFlow weekplanning' },
-    ],
+    image: {
+      src: '/projects/focusflow-overview.jpg',
+      alt: 'FocusFlow overzicht met werkdagen, prioriteiten en reflectie',
+    },
     href: '/focusflow',
-    cta: 'Bekijk FocusFlow',
+    cta: 'Bekijk FocusFlow live hier',
   },
   {
     title: 'Woonbuddy',
     label: 'zelfstandig wonen / begeleiding / structuur',
-    status: 'Prototype',
+    status: 'Live prototype',
     icon: <Home size={24} />,
     description:
       'Woonbuddy is een prototype voor mensen die ondersteuning nodig hebben bij wonen, taken, huisregels en persoonlijke ontwikkeling. De app vertaalt begeleiding naar overzichtelijke stappen en vaste ankerpunten.',
@@ -51,16 +51,16 @@ const prototypes: Prototype[] = [
       'Huisregels, links en begeleiding op één plek',
       'Ontwikkeling bijhouden zonder zware administratie',
     ],
-    images: [
-      { src: '/projects/woonbuddy-startpagina.jpg', alt: 'Woonbuddy startpagina' },
-      { src: '/projects/woonbuddy-taken.jpg', alt: 'Woonbuddy takenoverzicht' },
-      { src: '/projects/woonbuddy-ontwikkeling.jpg', alt: 'Woonbuddy ontwikkeling' },
-    ],
+    image: {
+      src: '/projects/woonbuddy-overview.jpg',
+      alt: 'Woonbuddy overzicht met startpagina, taken en ontwikkeling',
+    },
+    cta: 'Bekijk Woonbuddy live hier',
   },
   {
     title: 'MindFlow',
     label: 'reflectie / coaching / mentale rust',
-    status: 'Verkenning',
+    status: 'Live prototype',
     icon: <Brain size={24} />,
     description:
       'MindFlow verkent hoe een AI-coach kan helpen om gedachten, patronen en hypotheses rustig te ordenen. Niet als vervanging van begeleiding, maar als veilige structuur om sneller tot inzicht te komen.',
@@ -69,44 +69,54 @@ const prototypes: Prototype[] = [
       'Patronen en hypotheses zichtbaar maken',
       'Een actieve sessie waarin reflectie concreet wordt',
     ],
-    images: [
-      { src: '/projects/mindflow-dashboard.jpg', alt: 'MindFlow dashboard' },
-      { src: '/projects/mindflow-active-session.jpg', alt: 'MindFlow actieve sessie' },
-      { src: '/projects/mindflow-kaders.jpg', alt: 'MindFlow kaders voor coaching' },
-    ],
+    image: {
+      src: '/projects/mindflow-overview.jpg',
+      alt: 'MindFlow overzicht met dashboard, coachsessie en principes',
+    },
+    cta: 'Bekijk MindFlow live hier',
   },
 ];
 
-function ScreenshotStack({ images, title }: Pick<Prototype, 'images' | 'title'>) {
+function PrototypeImage({
+  image,
+  title,
+  onOpen,
+}: {
+  image: Prototype['image'];
+  title: string;
+  onOpen: (image: Prototype['image']) => void;
+}) {
   return (
-    <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-      {images.map((image, index) => (
-        <motion.figure
-          key={image.src}
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, delay: index * 0.08 }}
-          className={`overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-[0_18px_60px_rgba(15,23,42,0.08)] ${
-            index === 0 ? 'lg:-rotate-1' : index === 1 ? 'lg:ml-10 lg:rotate-1' : 'lg:mr-10 lg:-rotate-1'
-          }`}
-        >
-          <img
-            src={image.src}
-            alt={image.alt}
-            loading={index === 0 ? 'eager' : 'lazy'}
-            className="aspect-[4/3] h-full w-full object-contain object-top"
-          />
-          <figcaption className="sr-only">
-            {title}: {image.alt}
-          </figcaption>
-        </motion.figure>
-      ))}
-    </div>
+    <motion.button
+      type="button"
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45 }}
+      onClick={() => onOpen(image)}
+      className="group relative block w-full overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-[0_18px_60px_rgba(15,23,42,0.08)]"
+      aria-label={`Vergroot screenshot van ${title}`}
+    >
+      <img src={image.src} alt={image.alt} loading="lazy" className="w-full object-contain object-top" />
+      <span className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-sm backdrop-blur transition-transform group-hover:scale-105">
+        <Maximize2 size={18} />
+      </span>
+      <span className="absolute bottom-4 left-4 rounded-full bg-slate-950/70 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
+        Klik om te vergroten
+      </span>
+    </motion.button>
   );
 }
 
-function PrototypeCase({ prototype, index }: { prototype: Prototype; index: number }) {
+function PrototypeCase({
+  prototype,
+  index,
+  onOpen,
+}: {
+  prototype: Prototype;
+  index: number;
+  onOpen: (image: Prototype['image']) => void;
+}) {
   const isEven = index % 2 === 0;
 
   return (
@@ -117,10 +127,9 @@ function PrototypeCase({ prototype, index }: { prototype: Prototype; index: numb
       transition={{ duration: 0.6 }}
       className="relative"
     >
-      <div className="absolute -inset-4 rounded-[2.5rem] bg-brand/5 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
       <div className="card-3d relative p-6 md:p-10">
         <div className={`grid gap-10 lg:grid-cols-12 lg:items-center ${isEven ? '' : 'lg:[&>*:first-child]:order-2'}`}>
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-5">
             <div className="mb-6 flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-lg shadow-teal-500/20">
                 {prototype.icon}
@@ -146,16 +155,21 @@ function PrototypeCase({ prototype, index }: { prototype: Prototype; index: numb
               ))}
             </ul>
 
-            {prototype.href && prototype.cta ? (
+            {prototype.href ? (
               <a href={prototype.href} className="inline-flex items-center gap-2 font-bold text-brand group/link">
                 {prototype.cta}
                 <ArrowRight size={18} className="transition-transform group-hover/link:translate-x-1" />
               </a>
-            ) : null}
+            ) : (
+              <span className="inline-flex items-center gap-2 font-bold text-slate-400">
+                {prototype.cta}
+                <ArrowRight size={18} />
+              </span>
+            )}
           </div>
 
-          <div className="lg:col-span-6">
-            <ScreenshotStack images={prototype.images} title={prototype.title} />
+          <div className="lg:col-span-7">
+            <PrototypeImage image={prototype.image} title={prototype.title} onOpen={onOpen} />
           </div>
         </div>
       </div>
@@ -164,6 +178,8 @@ function PrototypeCase({ prototype, index }: { prototype: Prototype; index: numb
 }
 
 export function Experiments() {
+  const [activeImage, setActiveImage] = useState<Prototype['image'] | null>(null);
+
   return (
     <Section bg="light" id="projecten">
       <div className="mb-20">
@@ -189,10 +205,35 @@ export function Experiments() {
       <div className="space-y-16">
         {prototypes.map((prototype, index) => (
           <div key={prototype.title}>
-            <PrototypeCase prototype={prototype} index={index} />
+            <PrototypeCase prototype={prototype} index={index} onOpen={setActiveImage} />
           </div>
         ))}
       </div>
+
+      {activeImage ? (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeImage.alt}
+          onClick={() => setActiveImage(null)}
+        >
+          <button
+            type="button"
+            className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg"
+            onClick={() => setActiveImage(null)}
+            aria-label="Sluit vergrote afbeelding"
+          >
+            <X size={22} />
+          </button>
+          <img
+            src={activeImage.src}
+            alt={activeImage.alt}
+            className="max-h-[92vh] max-w-[96vw] rounded-2xl bg-white object-contain shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      ) : null}
     </Section>
   );
 }
