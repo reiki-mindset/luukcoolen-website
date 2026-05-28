@@ -29,10 +29,10 @@ export function Hero() {
         >
           <h2 className="text-2xl md:text-3xl font-serif text-slate-500 mb-2">Luuk Coolen</h2>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 mb-6">
-            Digitaal portfolio
+            Leerportfolio
           </h1>
           <p className="text-xl md:text-2xl font-semibold text-brand">
-            Praktijkgedreven prototypes rond structuur, overzicht en AI.
+            Praktijkervaring, procesdenken en digitale workflows.
           </p>
         </motion.div>
 
@@ -42,11 +42,11 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="space-y-6 text-lg md:text-xl text-slate-600 mb-12 leading-relaxed max-w-2xl"
         >
-          <p>Ik bouw kleine digitale tools vanuit echte praktijkproblemen.</p>
+          <p>Ik onderzoek hoe duidelijke workflows, informatieoverdracht en gebruiksvriendelijke systemen het werk in zorg en bewindvoering kunnen ondersteunen.</p>
           <p>
-            Van bewindvoering en zorg tot AI-workflows, structuurtools en prototype-apps: ik onderzoek hoe technologie rust, overzicht en betere keuzes kan ondersteunen.
+            De prototypes op deze site zijn geen commerciële producten, maar voorbeelden van hoe ik praktijkproblemen analyseer, gebruikersbehoeften vertaal en met AI-tools workflowverbetering verken.
           </p>
-          <p>Deze site laat zien wat ik maak, hoe ik denk en wat ik onderweg leer.</p>
+          <p>Mijn interesse ligt bij junior functioneel beheer, zorgdigitalisering, applicatiebeheer en de brug tussen gebruiker en technologie.</p>
         </motion.div>
 
         <motion.div
@@ -59,14 +59,14 @@ export function Hero() {
             href="#projecten"
             className="inline-flex items-center justify-center gap-2 bg-brand text-white px-8 py-4 rounded-2xl hover:bg-brand-dark transition-all font-bold shadow-xl shadow-teal-500/20 active:scale-95"
           >
-            Bekijk projecten
+            Bekijk voorbeelden
             <ArrowRight size={20} />
           </a>
           <a
             href="#werkwijze"
             className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-2xl hover:bg-slate-50 transition-all font-bold border border-slate-200 shadow-sm active:scale-95"
           >
-            Hoe ik bouw
+            Hoe ik werk
           </a>
         </motion.div>
       </div>

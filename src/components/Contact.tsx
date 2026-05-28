@@ -18,7 +18,7 @@ export function Contact() {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Contact</h2>
           <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-xl mx-auto">
-            Nieuwsgierig naar een project, prototype of de manier waarop ik bouw? Stuur gerust een bericht.
+            Nieuwsgierig naar mijn leerportfolio, mijn kijk op workflows of mijn interesse in functioneel beheer en zorgdigitalisering? Ik ga graag in gesprek.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

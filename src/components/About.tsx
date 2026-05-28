@@ -12,19 +12,19 @@ export function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Van praktijk naar prototype</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Van praktijk naar functioneel beheer</h2>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            Ik ben <span className="font-semibold text-slate-900">Luuk Coolen</span>, bewindvoerder met een achtergrond in maatschappelijk werk.
+            Ik ben <span className="font-semibold text-slate-900">Luuk Coolen</span>, bewindvoerder met een achtergrond in maatschappelijk werk en een groeiende focus op functioneel beheer, zorgdigitalisering en applicatiebeheer.
           </p>
           <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
             <p>
-              In mijn werk zie ik hoe snel mensen en professionals vastlopen wanneer informatie versnipperd raakt, stappen onduidelijk zijn of systemen niet logisch voelen.
+              In begeleiding, GGZ/LVB, maatschappelijke ondersteuning en bewindvoering heb ik gezien hoe belangrijk duidelijke workflows, goede informatieoverdracht en gebruiksvriendelijke systemen zijn.
             </p>
             <p>
-              Daardoor ben ik gaan bouwen: niet om meteen grote software te maken, maar om ideeën sneller zichtbaar, testbaar en bespreekbaar te maken.
+              Daarom ben ik mij gaan verdiepen in digitale processen: hoe breng je gebruikersbehoeften in kaart, hoe beheer je informatie logisch en hoe zorg je dat systemen aansluiten op de dagelijkse praktijk?
             </p>
             <p className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm text-slate-900 font-medium italic">
-              "Deze site is mijn digitale CV: niet alleen wat ik heb gedaan, maar vooral hoe ik kijk, leer en maak."
+              "Deze site is mijn leerportfolio: niet om apps te verkopen, maar om te laten zien hoe ik analyseer, structureer en leer op het snijvlak van mens, proces en technologie."
             </p>
           </div>
         </motion.div>
@@ -48,15 +48,15 @@ export function About() {
               {[
                 {
                   title: 'Bewindvoerder',
-                  desc: 'Werken met complexe dossiers waarin financiële, juridische en persoonlijke situaties samenkomen.',
+                  desc: 'Werken met complexe dossiers waarin informatie, prioriteiten, afspraken en besluitvorming zorgvuldig moeten samenkomen.',
                 },
                 {
                   title: 'Persoonlijk begeleider (GGZ / LVB)',
-                  desc: 'Begeleiding van cliënten met psychische kwetsbaarheid en behoefte aan structuur.',
+                  desc: 'Begeleiding van cliënten met psychische kwetsbaarheid en behoefte aan duidelijke stappen, overdracht en voorspelbaarheid.',
                 },
                 {
                   title: 'Vrijwilliger thuisadministratie',
-                  desc: 'Ondersteunen bij overzicht in administratie, post, geldzaken en vervolgstappen.',
+                  desc: 'Ondersteunen bij overzicht in administratie, post, geldzaken en praktische vervolgstappen.',
                 },
               ].map((job) => (
                 <div key={job.title} className="group relative pl-6 border-l-2 border-slate-100 hover:border-brand transition-colors">
@@ -85,9 +85,9 @@ export function About() {
             <ul className="grid sm:grid-cols-2 gap-4">
               {[
                 'HBO Maatschappelijk Werk',
-                'Bewindvoering in de praktijk',
-                'Gedragsproblematiek en begeleiding',
-                'Zelfstudie AI, prototyping en productdenken',
+                'Interesse in functioneel beheer',
+                'Zorgdigitalisering en applicatiebeheer',
+                'AI-workflows en procesondersteuning',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-slate-600 text-sm p-3 rounded-xl bg-slate-50 border border-slate-100">
                   <ChevronRight size={14} className="text-brand shrink-0" />

@@ -26,15 +26,15 @@ type Prototype = {
 const prototypes: Prototype[] = [
   {
     title: 'FocusFlow',
-    label: 'bewindvoering / prioriteren / overzicht',
-    status: 'Live prototype',
+    label: 'workflowanalyse / dossiers / prioritering',
+    status: 'Leerprototype',
     icon: <LayoutTemplate size={24} />,
     description:
-      'FocusFlow onderzoekt hoe taken, dossierinformatie en prioriteiten kunnen samenkomen in een helder actiebeeld. Het prototype helpt om complexe cliëntvragen voor te bereiden en de volgende stap scherper te maken.',
+      'FocusFlow is een leerprototype waarmee ik onderzocht hoe complexe dossierinformatie, taken en prioriteiten kunnen worden vertaald naar een duidelijke werkflow. De nadruk ligt op besluitvoorbereiding, informatieordening en ondersteuning van de gebruiker.',
     bullets: [
-      'Grip op versnipperde dossierinformatie',
-      'Focus op urgentie, context en vervolgstap',
-      'Weekplanning en reflectie als onderdeel van de workflow',
+      'Analyse van versnipperde dossierinformatie en terugkerende werkstappen',
+      'Prioritering op basis van urgentie, context en vervolgstap',
+      'Weekplanning en reflectie als onderdeel van procesondersteuning',
     ],
     image: {
       src: '/projects/focusflow-overview.jpg',
@@ -50,15 +50,15 @@ const prototypes: Prototype[] = [
   },
   {
     title: 'Woonbuddy',
-    label: 'zelfstandig wonen / begeleiding / structuur',
-    status: 'Live prototype',
+    label: 'gebruikersbehoefte / begeleiding / structuur',
+    status: 'Leerprototype',
     icon: <Home size={24} />,
     description:
-      'Woonbuddy is een prototype voor mensen die ondersteuning nodig hebben bij wonen, taken, huisregels en persoonlijke ontwikkeling. De app vertaalt begeleiding naar overzichtelijke stappen en vaste ankerpunten.',
+      'Woonbuddy laat zien hoe ik een ondersteuningsproces vertaal naar duidelijke informatie, vaste stappen en begrijpelijke navigatie. Het prototype is vooral een voorbeeld van gebruikersgericht denken vanuit begeleiding en dagelijkse structuur.',
     bullets: [
-      'Dagelijkse taken en activiteiten zichtbaar maken',
-      'Huisregels, links en begeleiding op één plek',
-      'Ontwikkeling bijhouden zonder zware administratie',
+      'Gebruikersbehoeften vertalen naar overzichtelijke schermen',
+      'Taken, huisregels en begeleiding logisch groeperen',
+      'Structuur bieden zonder onnodige administratieve druk',
     ],
     image: {
       src: '/projects/woonbuddy-overview.jpg',
@@ -74,15 +74,15 @@ const prototypes: Prototype[] = [
   },
   {
     title: 'MindFlow',
-    label: 'reflectie / coaching / mentale rust',
-    status: 'Live prototype',
+    label: 'AI-workflow / reflectie / informatieordening',
+    status: 'Leerprototype',
     icon: <Brain size={24} />,
     description:
-      'MindFlow verkent hoe een AI-coach kan helpen om gedachten, patronen en hypotheses rustig te ordenen. Niet als vervanging van begeleiding, maar als veilige structuur om sneller tot inzicht te komen.',
+      'MindFlow verkent hoe AI kan helpen om informatie, patronen en hypotheses rustig te ordenen. Voor mij is dit vooral een onderzoek naar AI als procesondersteuning: hoe maak je een complexe reflectiestroom veilig, begrijpelijk en bruikbaar?',
     bullets: [
-      'Starten vanuit een duidelijke coachvraag',
-      'Patronen en hypotheses zichtbaar maken',
-      'Een actieve sessie waarin reflectie concreet wordt',
+      'Een gebruikersflow opbouwen vanuit een duidelijke startvraag',
+      'Patronen en hypotheses zichtbaar maken zonder te veel ruis',
+      'AI inzetten als hulpmiddel voor structuur en vervolgstappen',
     ],
     image: {
       src: '/projects/mindflow-overview.jpg',
@@ -236,13 +236,13 @@ export function Experiments() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <h2 className="mb-8 text-3xl font-bold leading-tight md:text-5xl">Projecten en prototypes</h2>
+          <h2 className="mb-8 text-3xl font-bold leading-tight md:text-5xl">Voorbeelden van mijn werkwijze</h2>
           <div className="space-y-6 text-xl leading-relaxed text-slate-600">
             <p>
-              Geen perfecte producten, maar tastbare experimenten. Ik gebruik projecten om te leren, aannames te testen en praktijkproblemen concreet te maken.
+              De voorbeelden hieronder zijn geen eindproducten of apps die ik verkoop. Ze laten zien hoe ik processen analyseer, informatie structureer en gebruikersbehoeften vertaal naar digitale ondersteuning.
             </p>
             <p className="font-medium text-slate-900">
-              De rode draad: overzicht, structuur, besluitvorming en mentale rust in complexe situaties.
+              De rode draad: functioneel beheer, zorgdigitalisering, workflowondersteuning en mensgerichte systemen.
             </p>
           </div>
         </motion.div>

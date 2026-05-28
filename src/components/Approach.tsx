@@ -1,28 +1,28 @@
 import { Section } from './ui/Section';
 import { motion } from 'motion/react';
-import { Bot, Hammer, MousePointerClick, Search } from 'lucide-react';
+import { Bot, ClipboardList, MousePointerClick, Search } from 'lucide-react';
 
 export function Approach() {
   const steps = [
     {
       icon: <Search size={24} />,
-      title: 'Praktijksignaal herkennen',
-      description: 'Ik begin bij situaties die ik herken uit zorg, bewindvoering of persoonlijke structuur: waar ontstaat ruis, tijdverlies of mentale druk?',
+      title: 'Praktijkprobleem analyseren',
+      description: 'Ik begin bij de werkvloer: waar loopt informatie vast, welke stappen zijn onduidelijk en wat heeft de gebruiker nodig om rustig verder te kunnen?',
+    },
+    {
+      icon: <ClipboardList size={24} />,
+      title: 'Proces en informatie ordenen',
+      description: 'Ik teken de workflow uit, groepeer informatie logisch en kijk waar overdracht, prioritering of gebruiksvriendelijkheid beter kan.',
     },
     {
       icon: <Bot size={24} />,
-      title: 'Samen denken met AI',
-      description: 'Met tools als ChatGPT, Gemini, Cursor en Google AI Studio verken ik snel richtingen, teksten, flows en technische opties.',
-    },
-    {
-      icon: <Hammer size={24} />,
-      title: 'Klein prototype bouwen',
-      description: 'Daarna maak ik iets tastbaars: een scherm, workflow, mini-app of experiment dat je kunt aanklikken en beoordelen.',
+      title: 'AI-tools inzetten als hulpmiddel',
+      description: 'Met AI-tools verken ik scenario’s, schermteksten en procesvarianten. AI is daarbij geen doel, maar een manier om sneller te leren en scherper te analyseren.',
     },
     {
       icon: <MousePointerClick size={24} />,
-      title: 'Testen en aanscherpen',
-      description: 'Ik kijk wat duidelijker wordt, wat schuurt en wat ik leer. Het doel is niet meteen perfectie, maar sneller begrijpen wat werkt.',
+      title: 'Iteratief toetsen en verbeteren',
+      description: 'Ik maak een klein, aanklikbaar voorbeeld en kijk wat duidelijker wordt, wat schuurt en welke vragen belangrijk zijn voor beheer, gebruik en doorontwikkeling.',
     },
   ];
 
@@ -35,9 +35,9 @@ export function Approach() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Hoe ik werk</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Hoe ik analyseer en leer</h2>
           <p className="text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl">
-            Ik gebruik AI niet als trucje, maar als bouwpartner om sneller van vaag probleem naar zichtbaar prototype te komen.
+            Mijn werkwijze is rustig en procesmatig: eerst begrijpen wat er gebeurt, dan structureren, testen en verbeteren. Dat past bij mijn interesse in functioneel beheer en zorgdigitalisering.
           </p>
         </motion.div>
 

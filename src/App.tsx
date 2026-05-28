@@ -11,7 +11,7 @@ export default function App() {
         <div className="px-6 md:px-10 h-16 flex items-center justify-between">
           <div className="flex flex-col">
             <span className="font-serif font-semibold text-lg tracking-tight text-slate-900 leading-none">Luuk Coolen</span>
-            <span className="text-[10px] font-bold text-brand uppercase tracking-[0.2em] mt-1">Digitaal portfolio</span>
+            <span className="text-[10px] font-bold text-brand uppercase tracking-[0.2em] mt-1">Leerportfolio</span>
           </div>
           <div className="hidden md:flex gap-8 text-sm font-medium text-slate-500">
             <a href="#projecten" className="hover:text-brand transition-colors">Projecten</a>
@@ -33,7 +33,7 @@ export default function App() {
       </main>
 
       <footer className="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
-        <p className="mb-2">&copy; {new Date().getFullYear()} Luuk Coolen. Portfolio van praktijkgedreven prototypes.</p>
+        <p className="mb-2">&copy; {new Date().getFullYear()} Luuk Coolen. Leerportfolio rond functioneel beheer, zorgdigitalisering en workflows.</p>
         <div className="flex justify-center gap-4 mt-4">
           <div className="w-1 h-1 rounded-full bg-slate-700" />
           <div className="w-1 h-1 rounded-full bg-slate-700" />
