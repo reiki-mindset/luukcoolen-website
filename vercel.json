@@ -12,7 +12,7 @@
     },
     {
       "source": "/mindflow",
-      "destination": "https://mindflow-nlp-coach-818331239205.europe-west2.run.app",
+      "destination": "https://mindflow-nlp-coach.vercel.app/",
       "permanent": false
     }
   ]
