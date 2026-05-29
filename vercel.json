@@ -7,7 +7,7 @@
     },
     {
       "source": "/woonbuddy",
-      "destination": "https://woonbuddy-759367249229.europe-west2.run.app",
+      "destination": "https://woonbuddy.vercel.app/",
       "permanent": false
     },
     {
