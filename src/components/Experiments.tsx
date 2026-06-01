@@ -12,7 +12,6 @@ type Prototype = {
   description: string;
   bullets: string[];
   approach: string[];
-  lessons: string[];
   image: {
     src: string;
     alt: string;
@@ -42,10 +41,6 @@ const prototypes: Prototype[] = [
       'Ik ben gestart bij de dagelijkse werkstroom: welke informatie komt binnen, waar ontstaat druk en welke keuzes moeten voorbereid worden?',
       'Daarna heb ik de stappen geordend in een werkmodus met signalen, inbox, agenda, prioriteiten, voorbereiding en weekplanning.',
     ],
-    lessons: [
-      'Prioriteren werkt pas goed als context, urgentie en vervolgstap eerst duidelijk zijn.',
-      'Een goed systeem moet niet alleen taken tonen, maar ook helpen om rustiger tot besluitvorming te komen.',
-    ],
     image: {
       src: '/projects/focusflow-overview.jpg',
       alt: 'FocusFlow overzicht met werkdagen, prioriteiten en reflectie',
@@ -74,10 +69,6 @@ const prototypes: Prototype[] = [
       'Ik heb gekeken naar situaties waarin bewoners of begeleiders snel overzicht nodig hebben: taken, afspraken, informatie en ontwikkeling.',
       'Vanuit die behoefte heb ik de informatie verdeeld in herkenbare onderdelen met eenvoudige taal en duidelijke navigatie.',
     ],
-    lessons: [
-      'Ondersteuning wordt bruikbaarder wanneer informatie niet alleen compleet is, maar ook rustig en voorspelbaar wordt aangeboden.',
-      'Gebruikersgerichte digitalisering begint vaak bij taal, volgorde en het weghalen van overbodige keuzes.',
-    ],
     image: {
       src: '/projects/woonbuddy-overview.jpg',
       alt: 'Woonbuddy overzicht met startpagina, taken en ontwikkeling',
@@ -105,10 +96,6 @@ const prototypes: Prototype[] = [
     approach: [
       'Ik heb onderzocht hoe een AI-gesprek minder vrijblijvend kan worden door het te koppelen aan sessies, profielen, hypotheses en bronnen.',
       'De flow is uitgewerkt rond reflectie, samenvatten, patroonherkenning en het voorbereiden van een volgende stap.',
-    ],
-    lessons: [
-      'AI wordt sterker als het proces eromheen duidelijk is: doel, context, begrenzing en controle door de gebruiker.',
-      'Een reflectietool vraagt om rust en transparantie, niet om zoveel mogelijk functies op een scherm.',
     ],
     image: {
       src: '/projects/mindflow-overview.jpg',
@@ -203,19 +190,11 @@ function PrototypeCase({
               ))}
             </ul>
 
-            <div className="mb-8 grid gap-4">
+            <div className="mb-8">
               <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5">
                 <h4 className="mb-3 text-xs font-bold uppercase tracking-widest text-slate-500">Hoe ik te werk ging</h4>
                 <div className="space-y-3 text-sm leading-relaxed text-slate-600">
                   {prototype.approach.map((item) => (
-                    <p key={item}>{item}</p>
-                  ))}
-                </div>
-              </div>
-              <div className="rounded-2xl border border-teal-100 bg-brand-light/70 p-5">
-                <h4 className="mb-3 text-xs font-bold uppercase tracking-widest text-brand">Wat ik ervan leerde</h4>
-                <div className="space-y-3 text-sm leading-relaxed text-slate-700">
-                  {prototype.lessons.map((item) => (
                     <p key={item}>{item}</p>
                   ))}
                 </div>
