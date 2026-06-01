@@ -3,6 +3,7 @@ import { Experiments } from './components/Experiments';
 import { Approach } from './components/Approach';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
+import { Privacy } from './components/Privacy';
 
 export default function App() {
   return (
@@ -30,10 +31,14 @@ export default function App() {
         <Approach />
         <About />
         <Contact />
+        <Privacy />
       </main>
 
       <footer className="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
         <p className="mb-2">&copy; {new Date().getFullYear()} Luuk Coolen. Leerportfolio rond functioneel beheer, zorgdigitalisering en workflows.</p>
+        <a href="#privacy" className="inline-flex font-medium text-slate-300 transition-colors hover:text-white">
+          Privacy
+        </a>
         <div className="flex justify-center gap-4 mt-4">
           <div className="w-1 h-1 rounded-full bg-slate-700" />
           <div className="w-1 h-1 rounded-full bg-slate-700" />
