@@ -14,6 +14,11 @@
       "source": "/mindflow",
       "destination": "https://mindflow-nlp-coach.vercel.app/",
       "permanent": false
+    },
+    {
+      "source": "/eerstestap",
+      "destination": "https://eerste-stap-804362620068.europe-west2.run.app",
+      "permanent": false
     }
   ]
 }
