@@ -2,20 +2,8 @@
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "focusflow.luukcoolen.nl" }],
-      "destination": "https://focusflow-bewind.vercel.app/",
-      "permanent": false
-    },
-    {
-      "source": "/",
       "has": [{ "type": "host", "value": "focusflow-personal.luukcoolen.nl" }],
       "destination": "https://focusflow-personal-759367249229.europe-west2.run.app/",
-      "permanent": false
-    },
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "mindflow.luukcoolen.nl" }],
-      "destination": "https://mindflow-nlp-coach.vercel.app/",
       "permanent": false
     },
     {
@@ -32,20 +20,8 @@
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "focusflow.luukcoolen.nl" }],
-      "destination": "https://focusflow-bewind.vercel.app/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
       "has": [{ "type": "host", "value": "focusflow-personal.luukcoolen.nl" }],
       "destination": "https://focusflow-personal-759367249229.europe-west2.run.app/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "mindflow.luukcoolen.nl" }],
-      "destination": "https://mindflow-nlp-coach.vercel.app/:path*",
       "permanent": false
     },
     {
@@ -62,7 +38,7 @@
     },
     {
       "source": "/focusflow",
-      "destination": "https://focusflow-bewind.vercel.app/",
+      "destination": "https://focusflow.luukcoolen.nl/",
       "permanent": false
     },
     {
@@ -77,7 +53,7 @@
     },
     {
       "source": "/mindflow",
-      "destination": "https://mindflow-nlp-coach.vercel.app/",
+      "destination": "https://mindflow.luukcoolen.nl/",
       "permanent": false
     },
     {

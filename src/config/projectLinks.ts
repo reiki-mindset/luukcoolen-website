@@ -7,7 +7,7 @@ export type ProjectLink = {
 export const projectLinks: ProjectLink[] = [
   {
     label: 'FocusFlow Bewind',
-    href: 'https://luukcoolen.nl/focusflow',
+    href: 'https://focusflow.luukcoolen.nl/',
     description: 'Workflow en prioritering',
   },
   {
@@ -17,12 +17,12 @@ export const projectLinks: ProjectLink[] = [
   },
   {
     label: 'Woonbuddy',
-    href: 'https://luukcoolen.nl/woonbuddy',
+    href: 'https://woonbuddy.luukcoolen.nl/',
     description: 'Wonen en begeleiding',
   },
   {
     label: 'MindFlow',
-    href: 'https://luukcoolen.nl/mindflow',
+    href: 'https://mindflow.luukcoolen.nl/',
     description: 'AI en reflectie',
   },
   {

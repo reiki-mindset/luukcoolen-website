@@ -50,7 +50,7 @@ const prototypes: Prototype[] = [
       { src: '/projects/focusflow-stap-4.jpg', alt: 'FocusFlow actieplan en top drie' },
       { src: '/projects/focusflow-weekplanning.jpg', alt: 'FocusFlow weekplanning' },
     ],
-    href: '/focusflow',
+    href: 'https://focusflow.luukcoolen.nl/',
     cta: 'Bekijk FocusFlow live hier',
   },
   {
@@ -78,7 +78,7 @@ const prototypes: Prototype[] = [
       { src: '/projects/woonbuddy-taken.jpg', alt: 'Woonbuddy takenoverzicht' },
       { src: '/projects/woonbuddy-ontwikkeling.jpg', alt: 'Woonbuddy ontwikkeling' },
     ],
-    href: '/woonbuddy',
+    href: 'https://woonbuddy.luukcoolen.nl/',
     cta: 'Bekijk Woonbuddy live hier',
   },
   {
@@ -106,7 +106,7 @@ const prototypes: Prototype[] = [
       { src: '/projects/mindflow-active-session.jpg', alt: 'MindFlow actieve sessie' },
       { src: '/projects/mindflow-kaders.jpg', alt: 'MindFlow kaders voor coaching' },
     ],
-    href: '/mindflow',
+    href: 'https://mindflow.luukcoolen.nl/',
     cta: 'Bekijk MindFlow live hier',
   },
 ];
