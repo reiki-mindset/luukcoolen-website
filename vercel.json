@@ -14,12 +14,6 @@
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "woonbuddy.luukcoolen.nl" }],
-      "destination": "https://woonbuddy.vercel.app/",
-      "permanent": false
-    },
-    {
-      "source": "/",
       "has": [{ "type": "host", "value": "mindflow.luukcoolen.nl" }],
       "destination": "https://mindflow-nlp-coach.vercel.app/",
       "permanent": false
@@ -46,12 +40,6 @@
       "source": "/:path*",
       "has": [{ "type": "host", "value": "focusflow-personal.luukcoolen.nl" }],
       "destination": "https://focusflow-personal-759367249229.europe-west2.run.app/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "woonbuddy.luukcoolen.nl" }],
-      "destination": "https://woonbuddy.vercel.app/:path*",
       "permanent": false
     },
     {
@@ -84,7 +72,7 @@
     },
     {
       "source": "/woonbuddy",
-      "destination": "https://woonbuddy.vercel.app/",
+      "destination": "https://woonbuddy.luukcoolen.nl/",
       "permanent": false
     },
     {
