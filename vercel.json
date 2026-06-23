@@ -1,6 +1,42 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "focusflow.luukcoolen.nl" }],
+      "destination": "https://focusflow-bewind.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "focusflow-personal.luukcoolen.nl" }],
+      "destination": "https://focusflow-personal-759367249229.europe-west2.run.app/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "woonbuddy.luukcoolen.nl" }],
+      "destination": "https://woonbuddy.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "mindflow.luukcoolen.nl" }],
+      "destination": "https://mindflow-nlp-coach.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "eerstestap.luukcoolen.nl" }],
+      "destination": "https://eerste-stap-804362620068.europe-west2.run.app/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "github.luukcoolen.nl" }],
+      "destination": "https://github.com/reiki-mindset",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "focusflow.luukcoolen.nl" }],
       "destination": "https://focusflow-bewind.vercel.app/:path*",
