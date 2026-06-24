@@ -172,6 +172,13 @@ export default function App() {
             </a>
           </div>
         </div>
+        <div className="flex items-center gap-5 overflow-x-auto border-t border-slate-200/60 px-4 py-2 text-xs font-medium text-slate-500 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:hidden">
+          <a href="#voorbeelden" className="shrink-0 hover:text-brand transition-colors">Voorbeelden</a>
+          <a href="#missie" className="shrink-0 hover:text-brand transition-colors">Missie</a>
+          <a href="#leren" className="shrink-0 hover:text-brand transition-colors">Leren</a>
+          <a href="#werkwijze" className="shrink-0 hover:text-brand transition-colors">Werkwijze</a>
+          <a href="#over-mij" className="shrink-0 hover:text-brand transition-colors">Over mij</a>
+        </div>
       </nav>
 
       <main className="pt-24 md:pt-32">
