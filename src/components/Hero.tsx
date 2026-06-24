@@ -32,7 +32,7 @@ export function Hero() {
             Leerportfolio
           </h1>
           <p className="text-xl md:text-2xl font-semibold text-brand">
-            Praktijkervaring, procesdenken en digitale workflows.
+            Zorg slimmer organiseren met digitale workflows, AI en praktijkervaring.
           </p>
         </motion.div>
 
@@ -42,11 +42,11 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="space-y-6 text-lg md:text-xl text-slate-600 mb-12 leading-relaxed max-w-2xl"
         >
-          <p>Ik onderzoek hoe duidelijke workflows, informatieoverdracht en gebruiksvriendelijke systemen het werk in zorg en bewindvoering kunnen ondersteunen.</p>
+          <p className="font-medium text-slate-800">Ik wil bijdragen aan zorg die slimmer georganiseerd is, zonder dat deze minder menselijk wordt.</p>
           <p>
-            De prototypes op deze site zijn geen commerciële producten, maar voorbeelden van hoe ik praktijkproblemen analyseer, gebruikersbehoeften vertaal en met AI-tools workflowverbetering verken.
+            In zorg en bewindvoering heb ik gezien hoeveel tijd verloren kan gaan door losse informatie, onduidelijke processen en systemen die niet altijd aansluiten op de praktijk. Daarom onderzoek ik hoe digitale hulpmiddelen, AI en slimme workflows kunnen bijdragen aan meer overzicht, betere informatieoverdracht en meer ruimte voor het echte werk.
           </p>
-          <p>Mijn interesse ligt bij junior functioneel beheer, zorgdigitalisering, applicatiebeheer en de brug tussen gebruiker en technologie.</p>
+          <p>De projecten op deze website zijn praktijkgerichte experimenten waarin ik onderzoek hoe mensen, processen en technologie beter kunnen samenwerken.</p>
         </motion.div>
 
         <motion.div

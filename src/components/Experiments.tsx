@@ -266,7 +266,7 @@ export function Experiments() {
               De voorbeelden hieronder zijn geen eindproducten of apps die ik verkoop. Ze laten zien hoe ik processen analyseer, informatie structureer en gebruikersbehoeften vertaal naar digitale ondersteuning.
             </p>
             <p className="font-medium text-slate-900">
-              De rode draad: functioneel beheer, zorgdigitalisering, workflowondersteuning en mensgerichte systemen.
+              De rode draad: zorginnovatie, procesverbetering, digitale ondersteuning en mensgerichte technologie.
             </p>
           </div>
         </motion.div>

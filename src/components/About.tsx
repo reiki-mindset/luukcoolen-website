@@ -12,19 +12,19 @@ export function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Van praktijk naar functioneel beheer</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Van praktijkervaring naar zorginnovatie</h2>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            Ik ben <span className="font-semibold text-slate-900">Luuk Coolen</span>, bewindvoerder met een achtergrond in maatschappelijk werk en een groeiende focus op functioneel beheer, zorgdigitalisering en applicatiebeheer.
+            Ik ben <span className="font-semibold text-slate-900">Luuk Coolen</span>, bewindvoerder met een achtergrond in maatschappelijk werk en een groeiende focus op zorginnovatie, procesverbetering en mensgerichte digitalisering.
           </p>
           <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
             <p>
               In begeleiding, GGZ/LVB, maatschappelijke ondersteuning en bewindvoering heb ik gezien hoe belangrijk duidelijke workflows, goede informatieoverdracht en gebruiksvriendelijke systemen zijn.
             </p>
             <p>
-              Daarom ben ik mij gaan verdiepen in digitale processen: hoe breng je gebruikersbehoeften in kaart, hoe beheer je informatie logisch en hoe zorg je dat systemen aansluiten op de dagelijkse praktijk?
+              Daarom ben ik mij gaan verdiepen in digitale ondersteuning: hoe breng je behoeften in kaart, hoe maak je informatie bruikbaar en hoe zorg je dat hulpmiddelen aansluiten op cliënten en professionals?
             </p>
             <p className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm text-slate-900 font-medium italic">
-              "Deze site is mijn leerportfolio: niet om apps te verkopen, maar om te laten zien hoe ik analyseer, structureer en leer op het snijvlak van mens, proces en technologie."
+              "Ik wil de brug zijn tussen wat cliënten nodig hebben, wat professionals in de praktijk meemaken en wat digitale hulpmiddelen kunnen betekenen."
             </p>
           </div>
         </motion.div>
@@ -85,9 +85,9 @@ export function About() {
             <ul className="grid sm:grid-cols-2 gap-4">
               {[
                 'HBO Maatschappelijk Werk',
-                'Interesse in functioneel beheer',
-                'Zorgdigitalisering en applicatiebeheer',
-                'AI-workflows en procesondersteuning',
+                'Zorginnovatie en procesverbetering',
+                'Mensgerichte digitalisering',
+                'AI-workflows en digitale ondersteuning',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-slate-600 text-sm p-3 rounded-xl bg-slate-50 border border-slate-100">
                   <ChevronRight size={14} className="text-brand shrink-0" />

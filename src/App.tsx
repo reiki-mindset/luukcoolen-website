@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 import { Hero } from './components/Hero';
 import { Experiments } from './components/Experiments';
+import { WhyProjects } from './components/WhyProjects';
 import { Lessons } from './components/Lessons';
 import { Approach } from './components/Approach';
 import { About } from './components/About';
@@ -174,6 +175,7 @@ export default function App() {
       <main className="pt-24 md:pt-32">
         <Hero />
         <Experiments />
+        <WhyProjects />
         <Lessons />
         <Approach />
         <About />
@@ -181,7 +183,7 @@ export default function App() {
       </main>
 
       <footer className="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
-        <p className="mb-2">&copy; {new Date().getFullYear()} Luuk Coolen. Leerportfolio rond functioneel beheer, zorgdigitalisering en workflows.</p>
+        <p className="mb-2">&copy; {new Date().getFullYear()} Luuk Coolen. Leerportfolio rond zorginnovatie, procesverbetering en mensgerichte digitalisering.</p>
         <button
           type="button"
           onClick={() => setIsPrivacyOpen(true)}

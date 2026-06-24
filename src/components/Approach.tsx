@@ -37,7 +37,7 @@ export function Approach() {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Hoe ik analyseer en leer</h2>
           <p className="text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl">
-            Mijn werkwijze is rustig en procesmatig: eerst begrijpen wat er gebeurt, dan structureren, testen en verbeteren. Dat past bij mijn interesse in functioneel beheer en zorgdigitalisering.
+            Mijn werkwijze is rustig en procesmatig: eerst begrijpen wat er gebeurt, dan structureren, testen en verbeteren. Zo onderzoek ik hoe digitale ondersteuning kan bijdragen aan betere zorgprocessen en mensgerichte dienstverlening.
           </p>
         </motion.div>
 
