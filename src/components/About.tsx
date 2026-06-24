@@ -14,17 +14,14 @@ export function About() {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Van praktijkervaring naar zorginnovatie</h2>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            Ik ben <span className="font-semibold text-slate-900">Luuk Coolen</span>, bewindvoerder met een achtergrond in maatschappelijk werk en een groeiende focus op zorginnovatie, procesverbetering en mensgerichte digitalisering.
+            Ik ben <span className="font-semibold text-slate-900">Luuk Coolen</span>. Ik werk als bewindvoerder en was eerder persoonlijk begeleider in de GGZ/LVB. Mijn basis ligt in het maatschappelijk werk.
           </p>
           <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
             <p>
-              In begeleiding, GGZ/LVB, maatschappelijke ondersteuning en bewindvoering heb ik gezien hoe belangrijk duidelijke workflows, goede informatieoverdracht en gebruiksvriendelijke systemen zijn.
+              Mijn interesse in zorginnovatie ontstond op de werkvloer. Ik zag hoe onduidelijkheid, versnipperde gegevens of een slecht passend systeem direct invloed hebben op cliënten én professionals.
             </p>
             <p>
-              Daarom ben ik mij gaan verdiepen in digitale ondersteuning: hoe breng je behoeften in kaart, hoe maak je informatie bruikbaar en hoe zorg je dat hulpmiddelen aansluiten op cliënten en professionals?
-            </p>
-            <p className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm text-slate-900 font-medium italic">
-              "Ik wil de brug zijn tussen wat cliënten nodig hebben, wat professionals in de praktijk meemaken en wat digitale hulpmiddelen kunnen betekenen."
+              Ik vind het interessant om zulke knelpunten uit te pluizen, terug te brengen tot een heldere vraag en ideeën vervolgens praktisch te testen. De projecten op deze site laten zien hoe ik daarin leer.
             </p>
           </div>
         </motion.div>

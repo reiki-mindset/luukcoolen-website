@@ -7,22 +7,22 @@ export function Approach() {
     {
       icon: <Search size={24} />,
       title: 'Praktijkprobleem analyseren',
-      description: 'Ik begin bij de werkvloer: waar loopt informatie vast, welke stappen zijn onduidelijk en wat heeft de gebruiker nodig om rustig verder te kunnen?',
+      description: 'Ik begin op de werkvloer: waar loopt het vast, welke stap is onduidelijk en wat heeft de gebruiker nodig om verder te kunnen?',
     },
     {
       icon: <ClipboardList size={24} />,
-      title: 'Proces en informatie ordenen',
-      description: 'Ik teken de workflow uit, groepeer informatie logisch en kijk waar overdracht, prioritering of gebruiksvriendelijkheid beter kan.',
+      title: 'Stappen en keuzes ordenen',
+      description: 'Ik teken de handelingen uit, groepeer wat bij elkaar hoort en zoek waar overdracht of gebruiksgemak beter kan.',
     },
     {
       icon: <Bot size={24} />,
       title: 'AI-tools inzetten als hulpmiddel',
-      description: 'Met AI-tools verken ik scenario’s, schermteksten en procesvarianten. AI is daarbij geen doel, maar een manier om sneller te leren en scherper te analyseren.',
+      description: 'Met AI-tools verken ik scenario’s en schermteksten. AI is geen doel, maar een manier om sneller te onderzoeken en vergelijken.',
     },
     {
       icon: <MousePointerClick size={24} />,
       title: 'Iteratief toetsen en verbeteren',
-      description: 'Ik maak een klein, aanklikbaar voorbeeld en kijk wat duidelijker wordt, wat schuurt en welke vragen belangrijk zijn voor beheer, gebruik en doorontwikkeling.',
+      description: 'Ik maak een klein aanklikbaar voorbeeld, kijk waar het helpt of schuurt en pas de gekozen richting aan.',
     },
   ];
 
@@ -37,7 +37,7 @@ export function Approach() {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Hoe ik analyseer en leer</h2>
           <p className="text-xl text-slate-600 mb-16 leading-relaxed max-w-3xl">
-            Mijn werkwijze is rustig en procesmatig: eerst begrijpen wat er gebeurt, dan structureren, testen en verbeteren. Zo onderzoek ik hoe digitale ondersteuning kan bijdragen aan betere zorgprocessen en mensgerichte dienstverlening.
+            Mijn werkwijze is rustig en stapsgewijs: begrijpen, ordenen, toetsen en verbeteren. Zo onderzoek ik wat in de praktijk werkelijk helpt.
           </p>
         </motion.div>
 

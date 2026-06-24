@@ -6,33 +6,33 @@ const lessons = [
   {
     icon: <Search size={21} />,
     title: 'Van idee naar probleemanalyse',
-    description: 'Ik begin minder snel met bouwen en onderzoek eerst waar gebruikers tegenaan lopen, wat het doel is en welk probleem werkelijk opgelost moet worden.',
+    description: 'Ik onderzoek eerst waar iemand tegenaan loopt, wat het doel is en welke vraag echt opgelost moet worden.',
   },
   {
     icon: <GitBranch size={21} />,
     title: 'Van losse prompts naar sprints',
-    description: 'Ik deel ontwikkeling op in kleinere stappen, maak keuzes expliciet en toets tussentijds wat werkt voordat ik verder bouw.',
+    description: 'Ik werk in kleine stappen, leg keuzes vast en toets eerder of een richting bruikbaar is.',
   },
   {
     icon: <Waypoints size={21} />,
     title: 'Van functionaliteit naar workflow',
-    description: 'Een mooie interface heeft weinig waarde als de volgorde, informatieoverdracht en onderliggende werkstappen niet kloppen.',
+    description: 'Een scherm werkt pas als volgorde, overdracht en handelingen logisch op elkaar aansluiten.',
   },
   {
     icon: <Bot size={21} />,
     title: 'Van AI gebruiken naar AI aansturen',
-    description: 'AI ondersteunt mijn werk, maar vervangt geen analyse. Betere vragen, kaders en controles leiden tot bruikbaardere uitkomsten.',
+    description: 'AI versnelt het verkennen, maar goede vragen, kaders en controle bepalen de kwaliteit.',
   },
   {
     icon: <Network size={21} />,
     title: 'Van prototype naar procesdenken',
-    description: 'Ik kijk nu ook naar informatiearchitectuur, dataopslag, implementatie, adoptie en wat een oplossing nodig heeft om duurzaam bruikbaar te blijven.',
+    description: 'Ik kijk ook naar data, implementatie, adoptie en wat nodig is om iets bruikbaar te houden.',
   },
 ];
 
 export function Lessons() {
   return (
-    <Section bg="light" className="border-y border-slate-100">
+    <Section bg="light" id="leren" className="border-y border-slate-100">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,12 +42,9 @@ export function Lessons() {
       >
         <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-brand">Ontwikkeling</p>
         <h2 className="mb-8 text-3xl font-bold leading-tight md:text-5xl">Wat deze projecten mij hebben geleerd</h2>
-        <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-slate-600 md:text-xl">
+        <div className="max-w-3xl text-lg leading-relaxed text-slate-600 md:text-xl">
           <p>
-            Toen ik begon, wilde ik vooral ideeën bouwen. Gaandeweg ontdekte ik dat goede digitale oplossingen niet beginnen bij technologie, maar bij het begrijpen van mensen, processen en informatie.
-          </p>
-          <p>
-            Door FocusFlow, Woonbuddy, MindFlow en andere prototypes ben ik steeds meer gaan kijken naar gebruikersbehoeften, informatieoverdracht, procesanalyse, workflowontwerp, implementatie en adoptie.
+            Door te bouwen en testen leerde ik dat een goede digitale oplossing niet bij technologie begint, maar bij de mensen die ermee werken. Daardoor werk ik nu minder vanuit losse functies en meer vanuit analyse, kleine stappen en tussentijds toetsen.
           </p>
         </div>
       </motion.div>
@@ -73,7 +70,7 @@ export function Lessons() {
 
       <div className="mt-10 border-t border-slate-200 pt-8">
         <p className="max-w-4xl text-lg leading-relaxed text-slate-700">
-          Deze projecten hebben mijn interesse in zorginnovatie, digitalisering en procesverbetering versterkt. Niet omdat ik softwareontwikkelaar wil worden, maar omdat ik wil bijdragen aan digitale ondersteuning die professionals helpt en de menselijke kant van zorg bewaart.
+          Deze manier van werken versterkte mijn interesse in zorginnovatie: technologie niet als doel, maar als middel om mensen en hun werk beter te ondersteunen.
         </p>
       </div>
     </Section>

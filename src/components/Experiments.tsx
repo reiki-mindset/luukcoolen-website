@@ -30,19 +30,19 @@ const focusFlowPersonalHref = projectLinks.find((project) => project.label === '
 const prototypes: Prototype[] = [
   {
     title: 'FocusFlow',
-    label: 'workflowanalyse / dossiers / prioritering',
+    label: 'dossiers / besluitvorming / dagstructuur',
     status: 'Leerprototype',
     icon: <LayoutTemplate size={24} />,
     description:
-      'FocusFlow is een leerprototype waarmee ik onderzocht hoe complexe dossierinformatie, taken en prioriteiten kunnen worden vertaald naar een duidelijke werkflow. De nadruk ligt op besluitvoorbereiding, informatieordening en ondersteuning van de gebruiker.',
+      'FocusFlow onderzoekt hoe complexe dossierinformatie kan worden teruggebracht tot heldere keuzes voor de werkdag. De nadruk ligt op ordening, besluitvoorbereiding en een haalbare Top 3.',
     bullets: [
-      'Analyse van versnipperde dossierinformatie en terugkerende werkstappen',
-      'Prioritering op basis van urgentie, context en vervolgstap',
-      'Weekplanning en reflectie als onderdeel van procesondersteuning',
+      'Versnipperde dossiergegevens en terugkerende stappen in kaart brengen',
+      'Urgentie, context en vervolgstap zichtbaar afwegen',
+      'Dag- en weekplanning met elkaar verbinden',
     ],
     approach: [
-      'Ik ben gestart bij de dagelijkse werkstroom: welke informatie komt binnen, waar ontstaat druk en welke keuzes moeten voorbereid worden?',
-      'Daarna heb ik de stappen geordend in een werkmodus met signalen, inbox, agenda, prioriteiten, voorbereiding en weekplanning.',
+      'Ik begon bij de dagelijkse werksituatie: waar ontstaat druk en welke keuzes moeten worden voorbereid?',
+      'Vervolgens ordende ik signalen, inbox, agenda en planning tot een vaste volgorde voor de werkdag.',
     ],
     image: {
       src: '/projects/focusflow-overview.jpg',
@@ -57,48 +57,20 @@ const prototypes: Prototype[] = [
     cta: 'Bekijk FocusFlow live hier',
   },
   {
-    title: 'FocusFlow Personal',
-    label: 'persoonlijke workflow / reflectie / regie',
-    status: 'Leerprototype',
-    icon: <Compass size={24} />,
-    description:
-      'FocusFlow Personal onderzoekt hoe digitale ondersteuning kan helpen om meer rust, richting en regie aan te brengen in een drukke werkweek. Het prototype draait niet om zoveel mogelijk taken afvinken, maar om bewuster kiezen wat vandaag belangrijk is.',
-    bullets: [
-      'Dagelijkse focus en weekreflectie vertalen naar een duidelijke workflow',
-      'Ondersteunen bij prioriteren, begrenzen en reflecteren',
-      'Van losse taken naar bewuste regie en duurzame werkstructuur',
-    ],
-    approach: [
-      'Ik ben gestart vanuit mijn eigen behoefte aan overzicht tijdens een periode met veel sollicitaties, projecten en persoonlijke ontwikkeling. Gewone takenlijsten hielpen onvoldoende, omdat ze vooral meer taken verzamelen en weinig richting geven.',
-      'Daarom heb ik FocusFlow Personal opgebouwd rond een ritme van weekreview, dagstart, werkmodus en dagafsluiting. Met een Top 3, reflectievragen, energie-inzicht en een parkeerplaats onderzocht ik hoe een digitale workflow kan ondersteunen bij focus, zelfsturing en betere keuzes.',
-    ],
-    image: {
-      src: '/projects/focusflow-personal-overview.jpg',
-      alt: 'FocusFlow Personal overzicht met dagstart, werkmodus, reflectie en weekreview',
-    },
-    examples: [
-      { src: '/projects/focusflow-personal-dagstart.png', alt: 'FocusFlow Personal dagstart en morning scan' },
-      { src: '/projects/focusflow-personal-werkmodus.png', alt: 'FocusFlow Personal werkmodus met Top 3 en parkeerplaats' },
-      { src: '/projects/focusflow-personal-product-overview.jpg', alt: 'FocusFlow Personal productoverzicht met volledige workflow' },
-    ],
-    href: focusFlowPersonalHref,
-    cta: focusFlowPersonalHref ? 'Bekijk FocusFlow Personal live hier' : 'In ontwikkeling',
-  },
-  {
     title: 'Woonbuddy',
     label: 'gebruikersbehoefte / begeleiding / structuur',
     status: 'Leerprototype',
     icon: <Home size={24} />,
     description:
-      'Woonbuddy laat zien hoe ik een ondersteuningsproces vertaal naar duidelijke informatie, vaste stappen en begrijpelijke navigatie. Het prototype is vooral een voorbeeld van gebruikersgericht denken vanuit begeleiding en dagelijkse structuur.',
+      'Woonbuddy onderzoekt hoe bewoners en begeleiders sneller overzicht krijgen in taken, afspraken en ontwikkeling. Het prototype test eenvoudige taal, herkenbare onderdelen en begrijpelijke navigatie.',
     bullets: [
-      'Gebruikersbehoeften vertalen naar overzichtelijke schermen',
-      'Taken, huisregels en begeleiding logisch groeperen',
-      'Structuur bieden zonder onnodige administratieve druk',
+      'Dagelijkse afspraken en taken herkenbaar presenteren',
+      'Eenvoudige taal en voorspelbare navigatie gebruiken',
+      'Ontwikkeling tonen zonder extra administratieve druk',
     ],
     approach: [
-      'Ik heb gekeken naar situaties waarin bewoners of begeleiders snel overzicht nodig hebben: taken, afspraken, informatie en ontwikkeling.',
-      'Vanuit die behoefte heb ik de informatie verdeeld in herkenbare onderdelen met eenvoudige taal en duidelijke navigatie.',
+      'Ik begon bij momenten waarop bewoners of begeleiders snel willen weten wat er verwacht wordt en wat er gepland staat.',
+      'Die vragen vertaalde ik naar herkenbare onderdelen en ik testte hoeveel uitleg per scherm werkelijk nodig is.',
     ],
     image: {
       src: '/projects/woonbuddy-overview.jpg',
@@ -114,19 +86,19 @@ const prototypes: Prototype[] = [
   },
   {
     title: 'MindFlow',
-    label: 'AI-workflow / reflectie / informatieordening',
+    label: 'AI / reflectie / patroonherkenning',
     status: 'Leerprototype',
     icon: <Brain size={24} />,
     description:
-      'MindFlow verkent hoe AI kan helpen om informatie, patronen en hypotheses rustig te ordenen. Voor mij is dit vooral een onderzoek naar AI als procesondersteuning: hoe maak je een complexe reflectiestroom veilig, begrijpelijk en bruikbaar?',
+      'MindFlow onderzoekt hoe AI patronen en hypotheses kan helpen ordenen zonder de regie van de gebruiker over te nemen. De nadruk ligt op een rustige en begrijpelijke reflectiestroom.',
     bullets: [
-      'Een gebruikersflow opbouwen vanuit een duidelijke startvraag',
-      'Patronen en hypotheses zichtbaar maken zonder te veel ruis',
-      'AI inzetten als hulpmiddel voor structuur en vervolgstappen',
+      'Beginnen vanuit één concrete startvraag',
+      'Observaties en hypotheses herkenbaar van elkaar scheiden',
+      'De gebruiker controle houden over inzichten en vervolgstappen',
     ],
     approach: [
-      'Ik heb onderzocht hoe een AI-gesprek minder vrijblijvend kan worden door het te koppelen aan sessies, profielen, hypotheses en bronnen.',
-      'De flow is uitgewerkt rond reflectie, samenvatten, patroonherkenning en het voorbereiden van een volgende stap.',
+      'Ik onderzocht hoe een AI-gesprek richting krijgt wanneer sessies, profielen, hypotheses en bronnen met elkaar samenhangen.',
+      'Daarna bouwde ik de dialoog op rond terugkijken, samenvatten en het voorbereiden van een volgende stap.',
     ],
     image: {
       src: '/projects/mindflow-overview.jpg',
@@ -139,6 +111,34 @@ const prototypes: Prototype[] = [
     ],
     href: 'https://mindflow.luukcoolen.nl/',
     cta: 'Bekijk MindFlow live hier',
+  },
+  {
+    title: 'FocusFlow Personal',
+    label: 'dagritme / focus / zelfsturing',
+    status: 'Leerprototype',
+    icon: <Compass size={24} />,
+    description:
+      'FocusFlow Personal ontstond uit de vraag hoe een drukke werkweek meer richting kan krijgen. Het leerprototype helpt niet om méér te doen, maar om bewuster te kiezen wat vandaag aandacht verdient.',
+    bullets: [
+      'Dagstart en weekreview verbinden in één ritme',
+      'Een Top 3 gebruiken om keuzes zichtbaar te maken',
+      'Taken parkeren om ruimte en grenzen te bewaken',
+    ],
+    approach: [
+      'Ik begon vanuit mijn eigen behoefte aan overzicht tijdens een periode met sollicitaties, projecten en persoonlijke ontwikkeling. Gewone takenlijsten verzamelden vooral meer werk en gaven weinig richting.',
+      'Daarom ontwierp ik een ritme van weekreview, dagstart, werkmodus en afsluiting. Met een Top 3, energie-inzicht en parkeerplaats testte ik wat helpt om bewuster te kiezen.',
+    ],
+    image: {
+      src: '/projects/focusflow-personal-overview.jpg',
+      alt: 'FocusFlow Personal overzicht met dagstart, werkmodus, reflectie en weekreview',
+    },
+    examples: [
+      { src: '/projects/focusflow-personal-dagstart.png', alt: 'FocusFlow Personal dagstart en morning scan' },
+      { src: '/projects/focusflow-personal-werkmodus.png', alt: 'FocusFlow Personal werkmodus met Top 3 en parkeerplaats' },
+      { src: '/projects/focusflow-personal-product-overview.jpg', alt: 'FocusFlow Personal productoverzicht met volledige workflow' },
+    ],
+    href: focusFlowPersonalHref,
+    cta: focusFlowPersonalHref ? 'Bekijk FocusFlow Personal live hier' : 'In ontwikkeling',
   },
 ];
 
@@ -282,7 +282,7 @@ export function Experiments() {
   const [activeImage, setActiveImage] = useState<Prototype['image'] | null>(null);
 
   return (
-    <Section bg="light" id="projecten">
+    <Section bg="light" id="voorbeelden">
       <div className="mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -294,10 +294,10 @@ export function Experiments() {
           <h2 className="mb-8 text-3xl font-bold leading-tight md:text-5xl">Voorbeelden van mijn werkwijze</h2>
           <div className="space-y-6 text-xl leading-relaxed text-slate-600">
             <p>
-              De voorbeelden hieronder zijn geen eindproducten of apps die ik verkoop. Ze laten zien hoe ik processen analyseer, informatie structureer en gebruikersbehoeften vertaal naar digitale ondersteuning.
+              Deze leerprototypes laten zien hoe ik praktijksituaties onderzoek, keuzes zichtbaar maak en digitale ideeën toets.
             </p>
             <p className="font-medium text-slate-900">
-              De rode draad: zorginnovatie, procesverbetering, digitale ondersteuning en mensgerichte technologie.
+              De rode draad: zorginnovatie, gebruiksvriendelijkheid en beter georganiseerde zorg.
             </p>
           </div>
         </motion.div>

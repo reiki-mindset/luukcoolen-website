@@ -36,8 +36,10 @@ export default function App() {
             <span className="font-serif font-semibold text-lg tracking-tight text-slate-900 leading-none">Luuk Coolen</span>
             <span className="text-[10px] font-bold text-brand uppercase tracking-[0.2em] mt-1">Leerportfolio</span>
           </div>
-          <div className="hidden md:flex gap-8 text-sm font-medium text-slate-500">
-            <a href="#projecten" className="hover:text-brand transition-colors">Projecten</a>
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-500">
+            <a href="#voorbeelden" className="hover:text-brand transition-colors">Voorbeelden</a>
+            <a href="#missie" className="hover:text-brand transition-colors">Missie</a>
+            <a href="#leren" className="hover:text-brand transition-colors">Leren</a>
             <a href="#werkwijze" className="hover:text-brand transition-colors">Werkwijze</a>
             <a href="#over-mij" className="hover:text-brand transition-colors">Over mij</a>
           </div>

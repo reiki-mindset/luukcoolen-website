@@ -44,9 +44,9 @@ export function Hero() {
         >
           <p className="font-medium text-slate-800">Ik wil bijdragen aan zorg die slimmer georganiseerd is, zonder dat deze minder menselijk wordt.</p>
           <p>
-            In zorg en bewindvoering heb ik gezien hoeveel tijd verloren kan gaan door losse informatie, onduidelijke processen en systemen die niet altijd aansluiten op de praktijk. Daarom onderzoek ik hoe digitale hulpmiddelen, AI en slimme workflows kunnen bijdragen aan meer overzicht, betere informatieoverdracht en meer ruimte voor het echte werk.
+            Vanuit mijn ervaring in zorg en bewindvoering onderzoek ik hoe digitale hulpmiddelen en AI kunnen zorgen voor meer overzicht, betere samenwerking en meer ruimte voor het echte werk.
           </p>
-          <p>De projecten op deze website zijn praktijkgerichte experimenten waarin ik onderzoek hoe mensen, processen en technologie beter kunnen samenwerken.</p>
+          <p>Deze site laat zien welke praktijkvragen ik onderzoek, wat ik daarbij maak en vooral wat ik ervan leer.</p>
         </motion.div>
 
         <motion.div
@@ -56,7 +56,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-5"
         >
           <a
-            href="#projecten"
+            href="#voorbeelden"
             className="inline-flex items-center justify-center gap-2 bg-brand text-white px-8 py-4 rounded-2xl hover:bg-brand-dark transition-all font-bold shadow-xl shadow-teal-500/20 active:scale-95"
           >
             Bekijk voorbeelden
