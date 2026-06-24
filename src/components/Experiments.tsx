@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Section } from './ui/Section';
-import { ArrowRight, Brain, CheckCircle2, Home, LayoutTemplate, Maximize2, X } from 'lucide-react';
+import { ArrowRight, Brain, CheckCircle2, Compass, Home, LayoutTemplate, Maximize2, X } from 'lucide-react';
 import { motion } from 'motion/react';
+import { projectLinks } from '../config/projectLinks';
 
 type Prototype = {
   title: string;
@@ -23,6 +24,8 @@ type Prototype = {
   href?: string;
   cta: string;
 };
+
+const focusFlowPersonalHref = projectLinks.find((project) => project.label === 'FocusFlow Personal')?.href;
 
 const prototypes: Prototype[] = [
   {
@@ -52,6 +55,34 @@ const prototypes: Prototype[] = [
     ],
     href: 'https://focusflow.luukcoolen.nl/',
     cta: 'Bekijk FocusFlow live hier',
+  },
+  {
+    title: 'FocusFlow Personal',
+    label: 'persoonlijke workflow / reflectie / regie',
+    status: 'Leerprototype',
+    icon: <Compass size={24} />,
+    description:
+      'FocusFlow Personal onderzoekt hoe digitale ondersteuning kan helpen om meer rust, richting en regie aan te brengen in een drukke werkweek. Het prototype draait niet om zoveel mogelijk taken afvinken, maar om bewuster kiezen wat vandaag belangrijk is.',
+    bullets: [
+      'Dagelijkse focus en weekreflectie vertalen naar een duidelijke workflow',
+      'Ondersteunen bij prioriteren, begrenzen en reflecteren',
+      'Van losse taken naar bewuste regie en duurzame werkstructuur',
+    ],
+    approach: [
+      'Ik ben gestart vanuit mijn eigen behoefte aan overzicht tijdens een periode met veel sollicitaties, projecten en persoonlijke ontwikkeling. Gewone takenlijsten hielpen onvoldoende, omdat ze vooral meer taken verzamelen en weinig richting geven.',
+      'Daarom heb ik FocusFlow Personal opgebouwd rond een ritme van weekreview, dagstart, werkmodus en dagafsluiting. Met een Top 3, reflectievragen, energie-inzicht en een parkeerplaats onderzocht ik hoe een digitale workflow kan ondersteunen bij focus, zelfsturing en betere keuzes.',
+    ],
+    image: {
+      src: '/projects/focusflow-personal-overview.jpg',
+      alt: 'FocusFlow Personal overzicht met dagstart, werkmodus, reflectie en weekreview',
+    },
+    examples: [
+      { src: '/projects/focusflow-personal-dagstart.png', alt: 'FocusFlow Personal dagstart en morning scan' },
+      { src: '/projects/focusflow-personal-werkmodus.png', alt: 'FocusFlow Personal werkmodus met Top 3 en parkeerplaats' },
+      { src: '/projects/focusflow-personal-weekreview.png', alt: 'FocusFlow Personal weekreview en planning' },
+    ],
+    href: focusFlowPersonalHref,
+    cta: focusFlowPersonalHref ? 'Bekijk FocusFlow Personal live hier' : 'In ontwikkeling',
   },
   {
     title: 'Woonbuddy',
