@@ -79,7 +79,7 @@ const prototypes: Prototype[] = [
     examples: [
       { src: '/projects/focusflow-personal-dagstart.png', alt: 'FocusFlow Personal dagstart en morning scan' },
       { src: '/projects/focusflow-personal-werkmodus.png', alt: 'FocusFlow Personal werkmodus met Top 3 en parkeerplaats' },
-      { src: '/projects/focusflow-personal-weekreview.png', alt: 'FocusFlow Personal weekreview en planning' },
+      { src: '/projects/focusflow-personal-product-overview.jpg', alt: 'FocusFlow Personal productoverzicht met volledige workflow' },
     ],
     href: focusFlowPersonalHref,
     cta: focusFlowPersonalHref ? 'Bekijk FocusFlow Personal live hier' : 'In ontwikkeling',
