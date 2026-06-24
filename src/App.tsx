@@ -2,27 +2,24 @@ import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 import { Hero } from './components/Hero';
 import { Experiments } from './components/Experiments';
+import { Lessons } from './components/Lessons';
 import { Approach } from './components/Approach';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Privacy } from './components/Privacy';
 import { projectLinks } from './config/projectLinks';
 
-const projectSections = [
-  { key: 'portfolio', label: 'Portfolio-projecten' },
-  { key: 'development', label: 'In ontwikkeling' },
-  { key: 'more', label: 'Meer' },
-] as const;
-
 export default function App() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  const [isDevelopmentOpen, setIsDevelopmentOpen] = useState(false);
   const projectsMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (!projectsMenuRef.current?.contains(event.target as Node)) {
         setIsProjectsOpen(false);
+        setIsDevelopmentOpen(false);
       }
     }
 
@@ -47,7 +44,10 @@ export default function App() {
             <div ref={projectsMenuRef} className="relative">
               <button
                 type="button"
-                onClick={() => setIsProjectsOpen((isOpen) => !isOpen)}
+                onClick={() => {
+                  setIsProjectsOpen((isOpen) => !isOpen);
+                  setIsDevelopmentOpen(false);
+                }}
                 className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200/80 bg-white/75 px-3 py-2 text-sm font-bold text-slate-700 shadow-sm transition-colors hover:border-teal-200 hover:text-brand md:px-4"
                 aria-expanded={isProjectsOpen}
                 aria-haspopup="menu"
@@ -62,34 +62,103 @@ export default function App() {
                   role="menu"
                 >
                   <div className="py-2">
-                    {projectSections.map((section, index) => (
-                      <div key={section.key} className={index > 0 ? 'border-t border-slate-100 pt-2' : ''}>
-                        <p className="px-4 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
-                          {section.label}
-                        </p>
-                        {projectLinks
-                          .filter((project) => project.section === section.key)
-                          .map((project) => (
-                            <a
-                              key={project.href}
-                              href={project.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={() => setIsProjectsOpen(false)}
-                              className="flex items-center justify-between gap-3 px-4 py-2.5 text-left transition-colors hover:bg-brand-light"
-                              role="menuitem"
-                            >
-                              <span>
-                                <span className="block text-sm font-bold text-slate-800">{project.label}</span>
-                                {project.description ? (
-                                  <span className="mt-0.5 block text-xs font-medium text-slate-500">{project.description}</span>
-                                ) : null}
-                              </span>
-                              <ExternalLink size={15} className="shrink-0 text-slate-400" />
-                            </a>
-                          ))}
-                      </div>
-                    ))}
+                    <p className="px-4 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                      Portfolio-projecten
+                    </p>
+                    {projectLinks
+                      .filter((project) => project.section === 'portfolio')
+                      .map((project) => (
+                        <a
+                          key={project.href}
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => {
+                            setIsProjectsOpen(false);
+                            setIsDevelopmentOpen(false);
+                          }}
+                          className="flex items-center justify-between gap-3 px-4 py-2.5 text-left transition-colors hover:bg-brand-light"
+                          role="menuitem"
+                        >
+                          <span>
+                            <span className="block text-sm font-bold text-slate-800">{project.label}</span>
+                            {project.description ? (
+                              <span className="mt-0.5 block text-xs font-medium text-slate-500">{project.description}</span>
+                            ) : null}
+                          </span>
+                          <ExternalLink size={15} className="shrink-0 text-slate-400" />
+                        </a>
+                      ))}
+
+                    <div className="mt-2 border-t border-slate-100 pt-2">
+                      <button
+                        type="button"
+                        onClick={() => setIsDevelopmentOpen((isOpen) => !isOpen)}
+                        className="flex w-full items-center justify-between px-4 py-2.5 text-left text-sm font-bold text-slate-700 transition-colors hover:bg-brand-light hover:text-brand"
+                        aria-expanded={isDevelopmentOpen}
+                        aria-controls="development-projects"
+                      >
+                        In ontwikkeling
+                        <ChevronDown size={16} className={`transition-transform ${isDevelopmentOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {isDevelopmentOpen ? (
+                        <div id="development-projects">
+                          {projectLinks
+                            .filter((project) => project.section === 'development')
+                            .map((project) => (
+                              <a
+                                key={project.href}
+                                href={project.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => {
+                                  setIsProjectsOpen(false);
+                                  setIsDevelopmentOpen(false);
+                                }}
+                                className="flex items-center justify-between gap-3 py-2.5 pl-6 pr-4 text-left transition-colors hover:bg-brand-light"
+                                role="menuitem"
+                              >
+                                <span>
+                                  <span className="block text-sm font-bold text-slate-800">{project.label}</span>
+                                  {project.description ? (
+                                    <span className="mt-0.5 block text-xs font-medium text-slate-500">{project.description}</span>
+                                  ) : null}
+                                </span>
+                                <ExternalLink size={15} className="shrink-0 text-slate-400" />
+                              </a>
+                            ))}
+                        </div>
+                      ) : null}
+                    </div>
+
+                    <div className="border-t border-slate-100 pt-2">
+                      <p className="px-4 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Meer</p>
+                      {projectLinks
+                        .filter((project) => project.section === 'more')
+                        .map((project) => (
+                          <a
+                            key={project.href}
+                            href={project.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => {
+                              setIsProjectsOpen(false);
+                              setIsDevelopmentOpen(false);
+                            }}
+                            className="flex items-center justify-between gap-3 px-4 py-2.5 text-left transition-colors hover:bg-brand-light"
+                            role="menuitem"
+                          >
+                            <span>
+                              <span className="block text-sm font-bold text-slate-800">{project.label}</span>
+                              {project.description ? (
+                                <span className="mt-0.5 block text-xs font-medium text-slate-500">{project.description}</span>
+                              ) : null}
+                            </span>
+                            <ExternalLink size={15} className="shrink-0 text-slate-400" />
+                          </a>
+                        ))}
+                    </div>
                   </div>
                 </div>
               ) : null}
@@ -105,6 +174,7 @@ export default function App() {
       <main className="pt-24 md:pt-32">
         <Hero />
         <Experiments />
+        <Lessons />
         <Approach />
         <About />
         <Contact />
