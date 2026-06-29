@@ -54,10 +54,4 @@ export const projectLinks: ProjectLink[] = [
     description: 'Gasten en planning',
     section: 'development',
   },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/reiki-mindset',
-    description: 'Code en projecten',
-    section: 'more',
-  },
 ];

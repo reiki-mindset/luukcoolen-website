@@ -15,6 +15,7 @@ export default function App() {
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isDevelopmentOpen, setIsDevelopmentOpen] = useState(false);
   const projectsMenuRef = useRef<HTMLDivElement>(null);
+  const moreProjectLinks = projectLinks.filter((project) => project.section === 'more');
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -135,11 +136,10 @@ export default function App() {
                       ) : null}
                     </div>
 
-                    <div className="border-t border-slate-100 pt-2">
-                      <p className="px-4 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Meer</p>
-                      {projectLinks
-                        .filter((project) => project.section === 'more')
-                        .map((project) => (
+                    {moreProjectLinks.length > 0 ? (
+                      <div className="border-t border-slate-100 pt-2">
+                        <p className="px-4 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Meer</p>
+                        {moreProjectLinks.map((project) => (
                           <a
                             key={project.href}
                             href={project.href}
@@ -161,7 +161,8 @@ export default function App() {
                             <ExternalLink size={15} className="shrink-0 text-slate-400" />
                           </a>
                         ))}
-                    </div>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               ) : null}
